@@ -5,25 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Awesome AI Pedia</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #0f172a; color: #e2e8f0; }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 48px 20px; }
-    .card { background: rgba(15,23,42,.72); border: 1px solid rgba(148,163,184,.18); border-radius: 20px; padding: 24px; }
-    a { color: #93c5fd; }
-    h1 { margin-top: 0; }
-    .muted { color: #94a3b8; }
+    :root { --bg: #0f172a; --surface: rgba(15,23,42,.72); --line: rgba(148,163,184,.18); --text: #e2e8f0; --muted: #94a3b8; --accent: #93c5fd; }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; color: var(--text); background: radial-gradient(circle at top left, rgba(59,130,246,.18), transparent 25%), linear-gradient(180deg, #020617 0%, var(--bg) 100%); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px 48px; }
+    .hero { display: grid; gap: 18px; grid-template-columns: 1.4fr .6fr; align-items: start; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 24px; box-shadow: 0 18px 40px rgba(2,6,23,.25); }
+    h1, h2, p { margin-top: 0; }
+    .muted { color: var(--muted); line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; }
+    .pillbar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .pill { padding: 10px 14px; border-radius: 999px; background: rgba(148,163,184,.10); border: 1px solid rgba(148,163,184,.16); color: var(--text); }
+    .pill.active { background: rgba(59,130,246,.18); border-color: rgba(59,130,246,.34); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+    .mini { padding: 18px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+    .mini strong { display: block; margin-bottom: 6px; }
+    ul { padding-left: 18px; line-height: 1.8; }
+    @media (max-width: 860px) { .hero, .grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card">
-      <h1>Awesome AI Pedia</h1>
-      <p class="muted">AI 知识导航仓库。这里是仓库首页，适合浏览分类、工作流和参考资料。</p>
-      <ul>
-        <li><a href="../SKILL.md">SKILL.md</a></li>
-        <li>Claude Code / Cursor / MCP / Prompt / Rules / Skills</li>
-        <li>中文说明：适合先查资料，再落地执行</li>
-      </ul>
-      <p><a href="https://github.com/MuMu1311/Awesome-AI-Pedia">GitHub 仓库</a></p>
+    <div class="hero">
+      <div class="card">
+        <div class="pillbar">
+          <a class="pill active" href="./">Awesome-AI-Pedia</a>
+          <a class="pill" href="https://mumu1311.github.io/skills/">skills</a>
+          <a class="pill" href="https://mumu1311.github.io/github-chinese-Public/">github-chinese-Public</a>
+        </div>
+        <h1>Awesome AI Pedia</h1>
+        <p class="muted">AI 知识导航仓库。这里是仓库首页，适合浏览分类、工作流和参考资料。</p>
+        <ul>
+          <li><a href="../SKILL.md">SKILL.md</a>：skill 入口说明</li>
+          <li>Claude Code / Cursor / MCP / Prompt / Rules / Skills</li>
+          <li>中文说明：适合先查资料，再落地执行</li>
+        </ul>
+        <p><a href="https://github.com/MuMu1311/Awesome-AI-Pedia">GitHub 仓库</a></p>
+      </div>
+      <div class="card">
+        <h2>导航</h2>
+        <div class="mini"><strong>知识类</strong><span class="muted">AI 学习路径、工具和工作流参考</span></div>
+        <div class="mini" style="margin-top:12px;"><strong>使用方式</strong><span class="muted">先找分类，再找示例，最后转成可执行步骤</span></div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="mini"><strong>Claude Code</strong><span class="muted">编码助手、命令、Browser、设置</span></div>
+      <div class="mini"><strong>MCP</strong><span class="muted">Figma、飞书、Playwright、Chrome DevTools</span></div>
+      <div class="mini"><strong>Rules / Skills</strong><span class="muted">规则、技能、提示词和可复用模板</span></div>
     </div>
   </div>
 </body>
